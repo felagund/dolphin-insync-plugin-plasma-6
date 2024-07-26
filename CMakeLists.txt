@@ -32,6 +32,7 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(GenerateExportHeader)
 
+
 # Set package properties
 set_package_properties(insyncdolphinplugins PROPERTIES
     DESCRIPTION "The Insync Dolphin plugin that adds Insync's context menus and overlay icons"
@@ -46,6 +47,7 @@ set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 set(CMAKE_INSTALL_RPATH "")
 
 # Dolphin plugin helper
+add_definitions(-DTRANSLATION_DOMAIN=\"insyncdolphinpluginhelper\")
 set(INSYNC_DOLPHIN_PLUGIN_HELPER insyncdolphinpluginhelper)
 add_library(${INSYNC_DOLPHIN_PLUGIN_HELPER} SHARED insyncdolphinpluginhelper.cpp
     insyncdolphinpluginhelper.hpp)
@@ -54,6 +56,7 @@ generate_export_header(${INSYNC_DOLPHIN_PLUGIN_HELPER} BASE_NAME insyncdolphinpl
 install(TARGETS ${INSYNC_DOLPHIN_PLUGIN_HELPER} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 # Item action plugin
+add_definitions(-DTRANSLATION_DOMAIN=\"fileitemactioninsyncplugin\")
 set(INSYNC_ACTION_PLUGIN fileitemactioninsyncplugin)
 add_library(${INSYNC_ACTION_PLUGIN} MODULE ${INSYNC_ACTION_PLUGIN}.cpp
     fileitemactioninsyncplugin.hpp
@@ -65,8 +68,11 @@ target_link_libraries(${INSYNC_ACTION_PLUGIN} PRIVATE
     KF6::KIOWidgets
     ${INSYNC_DOLPHIN_PLUGIN_HELPER}
 )
+install(FILES ${INSYNC_ACTION_PLUGIN}.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS ${INSYNC_ACTION_PLUGIN} DESTINATION ${PLUGIN_INSTALL_DIR})
 
 # Overlay icon plugin
+add_definitions(-DTRANSLATION_DOMAIN=\"overlayiconinsyncplugin\")
 set(INSYNC_OVERLAY_PLUGIN overlayiconinsyncplugin)
 add_library(${INSYNC_OVERLAY_PLUGIN} MODULE ${INSYNC_OVERLAY_PLUGIN}.cpp
     overlayiconinsyncplugin.hpp
