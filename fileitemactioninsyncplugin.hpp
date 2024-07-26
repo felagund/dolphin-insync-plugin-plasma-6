@@ -25,7 +25,8 @@
 #ifndef FILEITEMACTIONINSYNCPLUGIN_H
 #define FILEITEMACTIONINSYNCPLUGIN_H
 
-#include <KIOWidgets/KAbstractFileItemActionPlugin>
+//#include <KIOWidgets/KAbstractFileItemActionPlugin>
+#include <KAbstractFileItemActionPlugin>
 #include <QPointer>
 
 class QLocalSocket;

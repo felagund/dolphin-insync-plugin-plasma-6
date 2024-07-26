@@ -1,0 +1,250 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-92102ad8c4e70c9d034e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "insyncdolphinplugins",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6Bookmarks_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6Bookmarks_QCH-Debug-cdd595670ef816e29b0e.json",
+					"name" : "KF6Bookmarks_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6Completion_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6Completion_QCH-Debug-e5461814ac232206979a.json",
+					"name" : "KF6Completion_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6Config_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6Config_QCH-Debug-6ffdcd8168d990211e17.json",
+					"name" : "KF6Config_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6CoreAddons_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6CoreAddons_QCH-Debug-5b9397048b6fcb92a533.json",
+					"name" : "KF6CoreAddons_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6ItemViews_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6ItemViews_QCH-Debug-a3b6797203aad9332341.json",
+					"name" : "KF6ItemViews_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6JobWidgets_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6JobWidgets_QCH-Debug-22c7d28bc5d3d3222024.json",
+					"name" : "KF6JobWidgets_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6KIO_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6KIO_QCH-Debug-61969b9c141c3145fd3d.json",
+					"name" : "KF6KIO_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6Service_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6Service_QCH-Debug-a30c551eb0b16f43f4da.json",
+					"name" : "KF6Service_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6Solid_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6Solid_QCH-Debug-2ffbd272597b6020e23e.json",
+					"name" : "KF6Solid_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6WidgetsAddons_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6WidgetsAddons_QCH-Debug-0ccfc08c12b6670bc500.json",
+					"name" : "KF6WidgetsAddons_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KF6WindowSystem_QCH::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KF6WindowSystem_QCH-Debug-4971fcde978bd6799c6a.json",
+					"name" : "KF6WindowSystem_QCH",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fetch-translations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fetch-translations-Debug-cc07e8a45ba224aac3ea.json",
+					"name" : "fetch-translations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fileitemactioninsyncplugin::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fileitemactioninsyncplugin-Debug-5ca93937bbe7eb358740.json",
+					"name" : "fileitemactioninsyncplugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fileitemactioninsyncplugin_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fileitemactioninsyncplugin_autogen-Debug-122e0750427c1cedd1c4.json",
+					"name" : "fileitemactioninsyncplugin_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fileitemactioninsyncplugin_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fileitemactioninsyncplugin_autogen_timestamp_deps-Debug-427b226163ef46e66b87.json",
+					"name" : "fileitemactioninsyncplugin_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "insyncdolphinpluginhelper::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-insyncdolphinpluginhelper-Debug-36a40ae60103b30487fe.json",
+					"name" : "insyncdolphinpluginhelper",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "insyncdolphinpluginhelper_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-insyncdolphinpluginhelper_autogen-Debug-102c63a24908f406d4f2.json",
+					"name" : "insyncdolphinpluginhelper_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "insyncdolphinpluginhelper_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-insyncdolphinpluginhelper_autogen_timestamp_deps-Debug-727e075255a53db4d9b5.json",
+					"name" : "insyncdolphinpluginhelper_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "overlayiconinsyncplugin::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-overlayiconinsyncplugin-Debug-8cea548c3e299dd88602.json",
+					"name" : "overlayiconinsyncplugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "overlayiconinsyncplugin_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-overlayiconinsyncplugin_autogen-Debug-a19bdc5b723e23c024ce.json",
+					"name" : "overlayiconinsyncplugin_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "overlayiconinsyncplugin_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-overlayiconinsyncplugin_autogen_timestamp_deps-Debug-cca4a463082d21913bc9.json",
+					"name" : "overlayiconinsyncplugin_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Debug-7be4c7f2380831b85859.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kburns/Code/dolphin-insync-plugin-plasma-6/build/Desktop-Debug",
+		"source" : "/home/kburns/Code/dolphin-insync-plugin-plasma-6"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

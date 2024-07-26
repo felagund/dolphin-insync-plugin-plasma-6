@@ -1,4 +1,4 @@
-#include <insyncdolphinpluginhelper.h>
+#include <insyncdolphinpluginhelper.hpp>
 
 #include <unistd.h>
 
@@ -64,11 +64,11 @@ QVariant InsyncDolphinPluginHelper::sendCommand(const QJsonObject &command,
         // Response wasn't JSON serializable
 
         // Trim quotes
-        if (reply.startsWith("\""))
+        if (reply.startsWith(QStringLiteral("\"")))
         {
             reply.remove(0, 1);
         }
-        if (reply.endsWith("\""))
+        if (reply.endsWith(QStringLiteral("\"")))
         {
             reply.remove(reply.size() - 1, 1);
         }

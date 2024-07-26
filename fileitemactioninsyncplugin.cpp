@@ -22,8 +22,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA              *
  *****************************************************************************/
 
-#include "fileitemactioninsyncplugin.h"
-#include "insyncdolphinpluginhelper.h"
+#include "fileitemactioninsyncplugin.hpp"
+#include "insyncdolphinpluginhelper.hpp"
 
 #include <KFileItem>
 #include <KFileItemListProperties>
@@ -36,9 +36,11 @@
 #include <QJsonObject>
 
 K_PLUGIN_FACTORY(InsyncFileItemActionPluginFactory, registerPlugin<FileItemActionInsyncPlugin>();)
-K_EXPORT_PLUGIN(InsyncFileItemActionPluginFactory("fileitemactioninsyncplugin"))
 
-FileItemActionInsyncPlugin::FileItemActionInsyncPlugin(QObject *parent, const QVariantList &args) : KAbstractFileItemActionPlugin(parent)
+//K_EXPORT_PLUGIN(InsyncFileItemActionPluginFactory("fileitemactioninsyncplugin"))
+
+FileItemActionInsyncPlugin::FileItemActionInsyncPlugin(QObject *parent, const QVariantList &args)
+    : KAbstractFileItemActionPlugin(parent)
 {
     Q_UNUSED(args);
 
@@ -64,7 +66,8 @@ QList<QAction *> FileItemActionInsyncPlugin::actions(const KFileItemListProperti
     // }
 
     // For simplicity, let's just handle a single file for now
-    if (fileItemInfos.items().size() > 1 || fileItemInfos.items().size() == 0)
+    if (fileItemInfos.items().size() > 1 ||
+        fileItemInfos.items().size() == 0)
     {
         return QList<QAction *>();
     }
@@ -81,10 +84,13 @@ void FileItemActionInsyncPlugin::handleContextAction(const QJsonObject &action)
 QList<QAction *> FileItemActionInsyncPlugin::getContextMenuActions(const QString &url)
 {
     QJsonObject command = QJsonObject();
-    command.insert("command", "CONTEXT-MENU-ITEMS");
-    command.insert("full_path", url);
+    command.insert(QStringLiteral("command"),
+                   QStringLiteral("CONTEXT-MENU-ITEMS"));
+    command.insert(QStringLiteral("full_path"),
+                   url);
 
-    const QVariant reply = helper->sendCommand(command, controlSocket, InsyncDolphinPluginHelper::WaitForReply);
+    const QVariant reply = helper->sendCommand(command,
+                                               controlSocket, InsyncDolphinPluginHelper::WaitForReply);
 
     if (reply.isNull())
         return QList<QAction *>();
@@ -94,7 +100,7 @@ QList<QAction *> FileItemActionInsyncPlugin::getContextMenuActions(const QString
     QList<QVariant> menuitems = menuinfo.at(1).toList();
 
     QPointer<KActionMenu> topContextMenu = new KActionMenu(
-        QIcon::fromTheme("insync"),
+        QIcon::fromTheme(QStringLiteral("insync")),
         title,
         this);
 
@@ -104,7 +110,7 @@ QList<QAction *> FileItemActionInsyncPlugin::getContextMenuActions(const QString
         QString text = commandinfo.at(0).toString();
         QString method = commandinfo.at(1).toString();
 
-        if (text == "separator")
+        if (text == QStringLiteral("separator"))
         {
             topContextMenu->addSeparator();
         }
@@ -113,8 +119,8 @@ QList<QAction *> FileItemActionInsyncPlugin::getContextMenuActions(const QString
             QAction *actionItem = new QAction(text, this);
 
             QJsonObject actionJson = QJsonObject();
-            actionJson.insert("method", method);
-            actionJson.insert("full_path", url);
+            actionJson.insert(QStringLiteral("method"), method);
+            actionJson.insert(QStringLiteral("full_path"), url);
 
             connect(actionItem, &QAction::triggered, [=] {
                 handleContextAction(actionJson);

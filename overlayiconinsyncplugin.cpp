@@ -22,8 +22,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA              *
  *****************************************************************************/
 
-#include "overlayiconinsyncplugin.h"
-#include "insyncdolphinpluginhelper.h"
+#include "overlayiconinsyncplugin.hpp"
+#include "insyncdolphinpluginhelper.hpp"
 
 #include <KFileItem>
 #include <KPluginFactory>
@@ -32,6 +32,9 @@
 #include <QPointer>
 #include <QLocalSocket>
 #include <QJsonObject>
+#include <QString>
+#include <QStringList>
+#include <QStringLiteral>
 
 QStringList OverlayIconInsyncPlugin::getOverlays(const QUrl &url)
 {
@@ -41,19 +44,22 @@ QStringList OverlayIconInsyncPlugin::getOverlays(const QUrl &url)
     }
 
     QString status = getFileStatus(url.toLocalFile());
+    QStringList overlays = QStringList();
 
-    QStringList overlays;
-    if (status == "SYNCED")
+    if (status == QStringLiteral("SYNCED"))
     {
-        overlays << "emblem-insync-synced";
+        overlays.append(QStringLiteral(""));
+        //overlays << "emblem-insync-synced";
     }
-    else if (status == "SYNCING")
+    else if (status == QStringLiteral("SYNCING"))
     {
-        overlays << "emblem-insync-syncing";
+        overlays.append(QStringLiteral("emblem-insync-syncing"));
+        //overlays << "emblem-insync-syncing";
     }
-    else if (status == "ERROR")
+    else if (status == QStringLiteral("ERROR"))
     {
-        overlays << "emblem-insync-error";
+        overlays.append(QStringLiteral("emblem-insync-error"));
+        //overlays << "emblem-insync-error";
     }
 
     return overlays;
@@ -62,8 +68,8 @@ QStringList OverlayIconInsyncPlugin::getOverlays(const QUrl &url)
 QString OverlayIconInsyncPlugin::getFileStatus(const QString &url) const
 {
     QJsonObject command = QJsonObject();
-    command.insert("command", "GET-FILE-STATUS");
-    command.insert("full_path", QFileInfo(url).canonicalFilePath());
+    command.insert(QStringLiteral("command"), QStringLiteral("GET-FILE-STATUS"));
+    command.insert(QStringLiteral("full_path"), QFileInfo(url).canonicalFilePath());
 
     QPointer<QLocalSocket> itemStateSocket = new QLocalSocket;
     const QVariant reply = helper->sendCommand(command, itemStateSocket, InsyncDolphinPluginHelper::WaitForReply);
