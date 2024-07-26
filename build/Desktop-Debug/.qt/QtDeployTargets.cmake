@@ -1,6 +1,0 @@
-set(__QT_DEPLOY_TARGET_insyncdolphinpluginhelper_FILE /home/kburns/Code/dolphin-insync-plugin-plasma-6/build/Desktop-Debug/libinsyncdolphinpluginhelper.so)
-set(__QT_DEPLOY_TARGET_insyncdolphinpluginhelper_TYPE SHARED_LIBRARY)
-set(__QT_DEPLOY_TARGET_fileitemactioninsyncplugin_FILE /home/kburns/Code/dolphin-insync-plugin-plasma-6/build/Desktop-Debug/fileitemactioninsyncplugin.so)
-set(__QT_DEPLOY_TARGET_fileitemactioninsyncplugin_TYPE MODULE_LIBRARY)
-set(__QT_DEPLOY_TARGET_overlayiconinsyncplugin_FILE /home/kburns/Code/dolphin-insync-plugin-plasma-6/build/Desktop-Debug/overlayiconinsyncplugin.so)
-set(__QT_DEPLOY_TARGET_overlayiconinsyncplugin_TYPE MODULE_LIBRARY)
