@@ -48,7 +48,7 @@ QStringList OverlayIconInsyncPlugin::getOverlays(const QUrl &url)
 
     if (status == QStringLiteral("SYNCED"))
     {
-        overlays.append(QStringLiteral(""));
+        overlays.append(QStringLiteral("emblem-insync-synced"));
         //overlays << "emblem-insync-synced";
     }
     else if (status == QStringLiteral("SYNCING"))
