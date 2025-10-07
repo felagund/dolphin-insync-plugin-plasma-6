@@ -90,7 +90,8 @@ QList<QAction *> InsyncFileItemAction::getContextMenuActions(const QString &url)
     const QVariant reply = helper->sendCommand(command,
                                                controlSocket, InsyncDolphinPluginHelper::WaitForReply);
 
-    if (reply.isNull())
+    // This happens when a file is being uploaded, in that case no menu is shown
+    if (reply.canConvert<QByteArray>() && reply.toByteArray() == "null")
         return QList<QAction *>();
 
     QList<QVariant> menuinfo = reply.toList();
