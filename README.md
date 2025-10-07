@@ -25,14 +25,18 @@ cmake --build .
 ```
 sudo cmake --install .
 ```
+
+Note that everything is installed into `/usr`, not `/usr/local`.
+
 ### Uninstall
 ```
-sudo rm /usr/lib64/libinsyncdolphinpluginhelper.so /usr/lib64/qt6/plugins/kf6/kfileitemaction/insyncfileitemaction.so /usr/lib64/qt6/plugins/kf6/overlayicon/insyncoverlayicon.so
+sudo rm /usr/lib64/libinsyncdolphinpluginhelper.so /usr/lib64/qt6/plugins/kf6/kfileitemaction/insyncfileitemaction.so /usr/lib64/qt6/plugins/kf6/overlayicon/insyncoverlayicon.so /usr/share/icons/hicolor/64x64/emblems/emblem-insync-* /usr/share/icons/hicolor/scalable/emblems/emblem-insync-* ; sudo rmdir /usr/share/icons/hicolor/64x64/emblems /usr/share/icons/hicolor/scalable/emblems
+
 ```
-In case this throws an error, note where the files you are trying to remove are placed during installation.
+In case this throws an error, note where the files you are trying to remove are placed during the installation and remove those.
 
 ### Additional references
-`QJson` Docs: https://doc.qt.io/qt-5/json.html
+`QJson` Docs: https://doc.qt.io/qt-6/json.html
 
 
 [KAbstractFileItemActionPlugin]: https://api.kde.org/kabstractfileitemactionplugin.html
