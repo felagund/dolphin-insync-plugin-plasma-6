@@ -22,8 +22,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA              *
  *****************************************************************************/
 
-#ifndef OVERLAYICONINSYNCPLUGIN_H
-#define OVERLAYICONINSYNCPLUGIN_H
+#ifndef INSYNCOVERLAYICON_H
+#define INSYNCOVERLAYICON_H
 
 #include <KOverlayIconPlugin>
 
@@ -32,9 +32,9 @@ class InsyncDolphinPluginHelper;
 /**
  * @brief Insync implementation for the KOverlayIconPlugin interface.
  */
-class OverlayIconInsyncPlugin : public KOverlayIconPlugin
+class InsyncOverlayIcon : public KOverlayIconPlugin
 {
-    Q_PLUGIN_METADATA(IID "com.insync.overlayiconplugin" FILE "overlayiconinsyncplugin.json")
+    Q_PLUGIN_METADATA(IID "com.insync.overlayiconplugin" FILE "insyncoverlayicon.json")
     Q_OBJECT
 
 private:
@@ -47,4 +47,4 @@ private:
     QString getFileStatus(const QString &url) const;
 };
 
-#endif // OVERLAYICONINSYNCPLUGIN_H
+#endif // INSYNCOVERLAYICON_H

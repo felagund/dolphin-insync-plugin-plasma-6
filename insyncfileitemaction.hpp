@@ -22,8 +22,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA              *
  *****************************************************************************/
 
-#ifndef FILEITEMACTIONINSYNCPLUGIN_H
-#define FILEITEMACTIONINSYNCPLUGIN_H
+#ifndef INSYNCFILEITEMACTION_H
+#define INSYNCFILEITEMACTION_H
 
 //#include <KIOWidgets/KAbstractFileItemActionPlugin>
 #include <KAbstractFileItemActionPlugin>
@@ -35,7 +35,7 @@ class InsyncDolphinPluginHelper;
 /**
  * @brief Insync implementation for the KAbstractFileItemActionPlugin interface.
  */
-class FileItemActionInsyncPlugin : public KAbstractFileItemActionPlugin
+class InsyncFileItemAction : public KAbstractFileItemActionPlugin
 {
     Q_OBJECT
 
@@ -44,8 +44,8 @@ private:
     QPointer<QLocalSocket> controlSocket;
 
 public:
-    FileItemActionInsyncPlugin(QObject *parent, const QVariantList &args);
-    ~FileItemActionInsyncPlugin() override;
+    InsyncFileItemAction(QObject *parent, const QVariantList &args);
+    ~InsyncFileItemAction() override;
 
     QList<QAction *> actions(const KFileItemListProperties &fileItemInfos,
                              QWidget *parentWidget) override;
@@ -57,4 +57,4 @@ private:
     QList<QAction *> getContextMenuActions(const QString &url);
 };
 
-#endif // FILEITEMACTIONINSYNCPLUGIN_H
+#endif // INSYNCFILEITEMACTION_H

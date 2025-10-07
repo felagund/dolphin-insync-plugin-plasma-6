@@ -56,10 +56,10 @@ generate_export_header(${INSYNC_DOLPHIN_PLUGIN_HELPER} BASE_NAME insyncdolphinpl
 install(TARGETS ${INSYNC_DOLPHIN_PLUGIN_HELPER} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 # Item action plugin
-add_definitions(-DTRANSLATION_DOMAIN=\"fileitemactioninsyncplugin\")
-set(INSYNC_ACTION_PLUGIN fileitemactioninsyncplugin)
+add_definitions(-DTRANSLATION_DOMAIN=\"insyncfileitemaction\")
+set(INSYNC_ACTION_PLUGIN insyncfileitemaction)
 add_library(${INSYNC_ACTION_PLUGIN} MODULE ${INSYNC_ACTION_PLUGIN}.cpp
-    fileitemactioninsyncplugin.hpp)
+    insyncfileitemaction.hpp)
 target_link_libraries(${INSYNC_ACTION_PLUGIN} PRIVATE
     KF6::CoreAddons
     KF6::KIOCore
@@ -70,11 +70,11 @@ target_link_libraries(${INSYNC_ACTION_PLUGIN} PRIVATE
 install(TARGETS ${INSYNC_ACTION_PLUGIN} DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/kfileitemaction)
 
 # Overlay icon plugin
-add_definitions(-DTRANSLATION_DOMAIN=\"overlayiconinsyncplugin\")
-set(INSYNC_OVERLAY_PLUGIN overlayiconinsyncplugin)
+add_definitions(-DTRANSLATION_DOMAIN=\"insyncoverlayicon\")
+set(INSYNC_OVERLAY_PLUGIN insyncoverlayicon)
 add_library(${INSYNC_OVERLAY_PLUGIN} MODULE ${INSYNC_OVERLAY_PLUGIN}.cpp
-    overlayiconinsyncplugin.hpp
-    overlayiconinsyncplugin.json)
+    insyncoverlayicon.hpp
+    insyncoverlayicon.json)
 target_link_libraries(${INSYNC_OVERLAY_PLUGIN} PRIVATE
     KF6::CoreAddons
     KF6::KIOCore

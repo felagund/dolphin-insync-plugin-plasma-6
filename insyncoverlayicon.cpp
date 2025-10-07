@@ -22,7 +22,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA              *
  *****************************************************************************/
 
-#include "overlayiconinsyncplugin.hpp"
+#include "insyncoverlayicon.hpp"
 #include "insyncdolphinpluginhelper.hpp"
 
 #include <KFileItem>
@@ -36,7 +36,7 @@
 #include <QStringList>
 #include <QStringLiteral>
 
-QStringList OverlayIconInsyncPlugin::getOverlays(const QUrl &url)
+QStringList InsyncOverlayIcon::getOverlays(const QUrl &url)
 {
     if (!url.isLocalFile())
     {
@@ -65,7 +65,7 @@ QStringList OverlayIconInsyncPlugin::getOverlays(const QUrl &url)
     return overlays;
 }
 
-QString OverlayIconInsyncPlugin::getFileStatus(const QString &url) const
+QString InsyncOverlayIcon::getFileStatus(const QString &url) const
 {
     QJsonObject command = QJsonObject();
     command.insert(QStringLiteral("command"), QStringLiteral("GET-FILE-STATUS"));
