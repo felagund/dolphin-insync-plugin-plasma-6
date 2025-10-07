@@ -20,7 +20,6 @@ find_package(KF6KIO REQUIRED)
 #find_package(KF6 REQUIRED COMPONENTS WidgetsAddons Service)
 find_package(KF6WidgetsAddons REQUIRED)
 
-
 # Set up CMake module path
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
