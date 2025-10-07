@@ -26,6 +26,6 @@ cmake --build .
 `QJson` Docs: https://doc.qt.io/qt-5/json.html
 
 
-[KAbstractFileItemActionPlugin]: https://api.kde.org/frameworks/kio/html/classKAbstractFileItemActionPlugin.html
-[KActionMenu]: https://api.kde.org/frameworks/kwidgetsaddons/html/classKActionMenu.html
-[KOverlayIconPlugin]: https://api.kde.org/frameworks/kio/html/classKOverlayIconPlugin.html
+[KAbstractFileItemActionPlugin]: https://api.kde.org/kabstractfileitemactionplugin.html
+[KActionMenu]: https://api.kde.org/kactionmenu.html
+[KOverlayIconPlugin]: https://api.kde.org/koverlayiconplugin.html
