@@ -17,7 +17,6 @@ find_package(ECM REQUIRED NO_MODULE)
 find_package(KF6Config REQUIRED)
 find_package(KF6CoreAddons REQUIRED)
 find_package(KF6KIO REQUIRED)
-#find_package(KF6 REQUIRED COMPONENTS WidgetsAddons Service)
 find_package(KF6WidgetsAddons REQUIRED)
 
 # Set up CMake module path
