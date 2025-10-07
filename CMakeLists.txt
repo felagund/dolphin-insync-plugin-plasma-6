@@ -17,7 +17,9 @@ find_package(ECM REQUIRED NO_MODULE)
 find_package(KF6Config REQUIRED)
 find_package(KF6CoreAddons REQUIRED)
 find_package(KF6KIO REQUIRED)
-find_package(KF6 REQUIRED COMPONENTS WidgetsAddons)
+#find_package(KF6 REQUIRED COMPONENTS WidgetsAddons Service)
+find_package(KF6WidgetsAddons REQUIRED)
+
 
 # Set up CMake module path
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -68,8 +70,8 @@ target_link_libraries(${INSYNC_ACTION_PLUGIN} PRIVATE
     KF6::KIOWidgets
     ${INSYNC_DOLPHIN_PLUGIN_HELPER}
 )
-install(FILES ${INSYNC_ACTION_PLUGIN}.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(TARGETS ${INSYNC_ACTION_PLUGIN} DESTINATION ${PLUGIN_INSTALL_DIR})
+install(FILES ${INSYNC_ACTION_PLUGIN}.desktop DESTINATION ${KDE_INSTALL_DATADIR}/kio/servicemenus)
+install(TARGETS ${INSYNC_ACTION_PLUGIN} DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/kfileitemaction)
 
 # Overlay icon plugin
 add_definitions(-DTRANSLATION_DOMAIN=\"overlayiconinsyncplugin\")
@@ -84,6 +86,6 @@ target_link_libraries(${INSYNC_OVERLAY_PLUGIN} PRIVATE
     KF6::KIOWidgets
     ${INSYNC_DOLPHIN_PLUGIN_HELPER}
 )
-install(TARGETS ${INSYNC_OVERLAY_PLUGIN} DESTINATION ${PLUGIN_INSTALL_DIR}/kf6/overlayicon)
+install(TARGETS ${INSYNC_OVERLAY_PLUGIN} DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/overlayicon)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
