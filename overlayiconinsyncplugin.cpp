@@ -77,5 +77,3 @@ QString OverlayIconInsyncPlugin::getFileStatus(const QString &url) const
 
     return reply.toString();
 }
-
-#include "overlayiconinsyncplugin.moc"

@@ -35,11 +35,7 @@
 #include <QStringBuilder>
 #include <QJsonObject>
 
-K_PLUGIN_FACTORY(InsyncFileItemActionPluginFactory, registerPlugin<FileItemActionInsyncPlugin>();)
-
-//K_EXPORT_PLUGIN(InsyncFileItemActionPluginFactory("fileitemactioninsyncplugin"))
-
-FileItemActionInsyncPlugin::FileItemActionInsyncPlugin(QObject *parent, const QVariantList &args)
+FileItemActionInsyncPlugin::FileItemActionInsyncPlugin(QObject* parent, const QVariantList& args)
     : KAbstractFileItemActionPlugin(parent)
 {
     Q_UNUSED(args);
@@ -133,4 +129,5 @@ QList<QAction *> FileItemActionInsyncPlugin::getContextMenuActions(const QString
     return QList<QAction *>{topContextMenu};
 }
 
+K_PLUGIN_CLASS_WITH_JSON(FileItemActionInsyncPlugin, "fileitemactioninsyncplugin.json")
 #include "fileitemactioninsyncplugin.moc"

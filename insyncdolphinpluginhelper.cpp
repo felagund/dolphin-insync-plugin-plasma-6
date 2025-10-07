@@ -77,5 +77,3 @@ QVariant InsyncDolphinPluginHelper::sendCommand(const QJsonObject &command,
     }
     return jsonReply.toVariant();
 }
-
-#include "insyncdolphinpluginhelper.moc"

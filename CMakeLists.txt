@@ -59,8 +59,7 @@ install(TARGETS ${INSYNC_DOLPHIN_PLUGIN_HELPER} LIBRARY DESTINATION ${CMAKE_INST
 add_definitions(-DTRANSLATION_DOMAIN=\"fileitemactioninsyncplugin\")
 set(INSYNC_ACTION_PLUGIN fileitemactioninsyncplugin)
 add_library(${INSYNC_ACTION_PLUGIN} MODULE ${INSYNC_ACTION_PLUGIN}.cpp
-    fileitemactioninsyncplugin.hpp
-    fileitemactioninsyncplugin.desktop)
+    fileitemactioninsyncplugin.hpp)
 target_link_libraries(${INSYNC_ACTION_PLUGIN} PRIVATE
     KF6::CoreAddons
     KF6::KIOCore
@@ -68,7 +67,6 @@ target_link_libraries(${INSYNC_ACTION_PLUGIN} PRIVATE
     KF6::KIOWidgets
     ${INSYNC_DOLPHIN_PLUGIN_HELPER}
 )
-install(FILES ${INSYNC_ACTION_PLUGIN}.desktop DESTINATION ${KDE_INSTALL_DATADIR}/kio/servicemenus)
 install(TARGETS ${INSYNC_ACTION_PLUGIN} DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/kfileitemaction)
 
 # Overlay icon plugin
