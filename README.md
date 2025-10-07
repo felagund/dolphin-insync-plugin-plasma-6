@@ -20,7 +20,16 @@ mkdir build && cd build
 cmake ..
 cmake --build .
 ```
+### Install
 
+```
+sudo cmake --install .
+```
+### Uninstall
+```
+sudo rm /usr/lib64/libinsyncdolphinpluginhelper.so /usr/share/kio/servicemenus/fileitemactioninsyncplugin.desktop /usr/lib64/qt6/plugins/kf6/kfileitemaction/fileitemactioninsyncplugin.so /usr/lib64/qt6/plugins/kf6/overlayicon/overlayiconinsyncplugin.so
+```
+In case this throws an error, note where the files you are trying to remove are placed during installation.
 
 ### Additional references
 `QJson` Docs: https://doc.qt.io/qt-5/json.html
