@@ -1,6 +1,6 @@
 # Insync Dolphin plugin
 
-Insync context menus and overlay icons use the KDE5 API and may not work in KDE4.
+Insync context menus and overlay icons use the KDE6 API and will not work in KDE5 and earlier.
 
 ### Context menus
 Insync context menus are implemented using the KDE API [KAbstractFileItemActionPlugin]. The `KAbstractFileItemActionPlugin:actions` is called whenever a user right-clicks on a file or directory and should return a list of `QAction`s. If this returns an empty list, no additional context menus are added. This `QAction`s listed are always appended to the default list of options in the context menu. In our implementation, we return a [KActionMenu] containing the list of `QAction`s (`Add to Insync`, `Share`, etc) so that all of our context menu options are containined in its own submenu. Right now, we only support context menu actions when a single file/directory is selected as the client doesn't support it yet. A `.desktop` KDE service file is needed for this to show up in the list of plugins a user can enable in the Dolphin settings.
