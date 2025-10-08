@@ -85,12 +85,23 @@ target_link_libraries(${INSYNC_OVERLAY_PLUGIN} PRIVATE
 install(TARGETS ${INSYNC_OVERLAY_PLUGIN} DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/overlayicon)
 
 # Icons
-
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/usr/share/icons/
     DESTINATION ${KDE_INSTALL_ICONDIR}
     FILES_MATCHING
     PATTERN "*.png"
     PATTERN "*.svg"
 )
+
+# Remove files from previous installations
+# They were renamed and if they are still present, the overlay icons appear twice
+# Luckily when the files are not there, this fails silently
+install(CODE "
+    file(REMOVE 
+		\"\${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_PLUGINDIR}/kf6/overlayicon/overlayiconinsyncplugin.so\"
+        \"\${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_PLUGINDIR}/kf6/kfileitemaction/fileitemactioninsyncplugin.so\"
+        \"\${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/libinsyncdolphinpluginhelper.so\"
+        \"\${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_DATADIR}/kio/servicemenus/fileitemactioninsyncplugin.desktop\"
+    )
+")
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
