@@ -5,6 +5,7 @@
             "inode/directory"
         ],
         "Name": "Insync",
+		"Icon": "insync",
         "ServiceTypes": [
             "KFileItemAction/Plugin"
         ]
