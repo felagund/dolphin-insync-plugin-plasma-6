@@ -16,14 +16,13 @@ We have an additional library `InsyncDolphinPluginHelper` that's used in both th
 
 ### Build
 ```
-mkdir build && cd build
-cmake ..
-cmake --build .
+cmake -B build/
+cmake --build build/
 ```
 ### Install
 
 ```
-sudo cmake --install .
+sudo cmake --install build
 ```
 
 Note that everything is installed into `/usr`, not `/usr/local`.
