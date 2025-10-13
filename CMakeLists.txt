@@ -99,7 +99,6 @@ install(CODE "
     file(REMOVE 
 		\"\${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_PLUGINDIR}/kf6/overlayicon/overlayiconinsyncplugin.so\"
         \"\${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_PLUGINDIR}/kf6/kfileitemaction/fileitemactioninsyncplugin.so\"
-        \"\${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/libinsyncdolphinpluginhelper.so\"
         \"\${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_DATADIR}/kio/servicemenus/fileitemactioninsyncplugin.desktop\"
     )
 ")
