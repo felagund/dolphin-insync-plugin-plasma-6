@@ -13,7 +13,11 @@ Insync file overlay status icons are implemented using [KOverlayIconPlugin]. The
 ### Helper library
 We have an additional library `InsyncDolphinPluginHelper` that's used in both the context menu and overlay icon libraries for doing common functions (connecting to `insync.sock`, sending/receiving commands to the `insync.sock`, etc).
 
-
+### Dependencies
+On Fedora, you need at least these:
+```
+sudo dnf install kf6-kcoreaddons-devel kf6-kio-devel kf6-kconfig-devel   extra-cmake-modules qt6-qtbase-devel g++
+```
 ### Build
 ```
 cmake -B build/
