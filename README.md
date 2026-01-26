@@ -16,7 +16,11 @@ We have an additional library `InsyncDolphinPluginHelper` that's used in both th
 ### Dependencies
 On Fedora, you need at least these:
 ```
-sudo dnf install kf6-kcoreaddons-devel kf6-kio-devel kf6-kconfig-devel   extra-cmake-modules qt6-qtbase-devel g++
+sudo dnf install kf6-kcoreaddons-devel kf6-kio-devel kf6-kconfig-devel extra-cmake-modules qt6-qtbase-devel g++
+```
+On Kubuntu (and possibly Ubuntu and Debian), you need at least these:
+```
+sudo apt install kf6-kcoreaddons-dev kf6-kio-dev kf6-kconfig-dev extra-cmake-modules qt6-base-dev g++ cmake
 ```
 ### Build
 ```
