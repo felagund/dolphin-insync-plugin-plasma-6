@@ -24,7 +24,7 @@ sudo apt install kf6-kcoreaddons-dev kf6-kio-dev kf6-kconfig-dev extra-cmake-mod
 ```
 ### Build
 ```
-cmake -B build/
+cmake -DCMAKE_INSTALL_PREFIX=/usr -B build/
 cmake --build build/
 ```
 ### Install
@@ -33,7 +33,7 @@ cmake --build build/
 sudo cmake --install build
 ```
 
-Note that everything is installed into `/usr`, not `/usr/local`.
+Note that everything is installed into `/usr`, not `/usr/local`(which does not work).
 
 ### Uninstall
 ```
