@@ -42,13 +42,17 @@ InsyncFileItemAction::InsyncFileItemAction(QObject* parent, const QVariantList& 
 {
     Q_UNUSED(args);
 
-    controlSocket = new QLocalSocket(parent);
+    // Fix: helper was never allocated, dereferencing it caused a segfault
+    helper = new InsyncDolphinPluginHelper(this);
+    // Fix: use 'this' as parent instead of 'parent' to ensure proper Qt ownership
+    controlSocket = new QLocalSocket(this);
     helper->connectWithInsync(controlSocket);
 }
 
 InsyncFileItemAction::~InsyncFileItemAction()
 {
     delete controlSocket;
+    delete helper;
 }
 
 QList<QAction *> InsyncFileItemAction::actions(const KFileItemListProperties &fileItemInfos,
@@ -99,6 +103,10 @@ QList<QAction *> InsyncFileItemAction::getContextMenuActions(const QString &url)
     }
 
     QList<QVariant> menuinfo = reply.toList();
+    // Fix: prevent out-of-bounds access when reply has an unexpected format
+    if (menuinfo.size() < 2)
+        return QList<QAction *>();
+
     QString title = menuinfo.at(0).toString();
     QList<QVariant> menuitems = menuinfo.at(1).toList();
 

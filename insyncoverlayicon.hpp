@@ -40,9 +40,11 @@ class InsyncOverlayIcon : public KOverlayIconPlugin
     Q_OBJECT
 
 private:
-    InsyncDolphinPluginHelper *helper;
+    InsyncDolphinPluginHelper *helper = nullptr;
 
 public:
+    InsyncOverlayIcon(QObject *parent = nullptr);
+    ~InsyncOverlayIcon() override;
     QStringList getOverlays(const QUrl &item) override;
 
 private:

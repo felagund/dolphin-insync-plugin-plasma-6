@@ -38,6 +38,18 @@
 #include <QStringList>
 #include <QStringLiteral>
 
+// Fix: helper was never allocated, dereferencing it in getFileStatus() caused a segfault
+InsyncOverlayIcon::InsyncOverlayIcon(QObject *parent)
+    : KOverlayIconPlugin(parent)
+{
+    helper = new InsyncDolphinPluginHelper(this);
+}
+
+InsyncOverlayIcon::~InsyncOverlayIcon()
+{
+    delete helper;
+}
+
 QStringList InsyncOverlayIcon::getOverlays(const QUrl &url)
 {
     if (!url.isLocalFile())

@@ -66,10 +66,11 @@ QVariant InsyncDolphinPluginHelper::sendCommand(const QJsonObject &command,
         return QVariant();
     }
 
-    const QJsonDocument *request = new QJsonDocument(command);
+    // Fix: was 'new QJsonDocument' allocated on the heap but never freed (memory leak)
+    const QJsonDocument request(command);
 
     socket->readAll();
-    socket->write(request->toJson());
+    socket->write(request.toJson());
     socket->flush();
 
     if (mode == SendCommandOnly)

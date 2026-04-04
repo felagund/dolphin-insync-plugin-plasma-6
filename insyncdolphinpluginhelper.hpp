@@ -40,6 +40,8 @@ private:
     QString controlSocketPath;
 
 public:
+    explicit InsyncDolphinPluginHelper(QObject *parent = nullptr) : QObject(parent) {}
+
     enum SendCommandMode
     {
         WaitForReply,

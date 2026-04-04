@@ -42,7 +42,7 @@ class InsyncFileItemAction : public KAbstractFileItemActionPlugin
     Q_OBJECT
 
 private:
-    InsyncDolphinPluginHelper *helper;
+    InsyncDolphinPluginHelper *helper = nullptr;
     QPointer<QLocalSocket> controlSocket;
 
 public:
