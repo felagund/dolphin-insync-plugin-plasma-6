@@ -26,6 +26,8 @@ sudo apt install kf6-kcoreaddons-dev kf6-kio-dev kf6-kconfig-dev extra-cmake-mod
 ```
 ### Build
 ```
+git clone https://github.com/felagund/dolphin-insync-plugin-plasma-6.git
+rm build # not necessary unless you previously compiled the plugin
 cmake -DCMAKE_INSTALL_PREFIX=/usr -B build/
 cmake --build build/
 ```
