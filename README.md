@@ -1,5 +1,7 @@
 # Insync Dolphin plugin
 
+This is a forked version from the upstream: https://github.com/insynchq/dolphin-insync-plugin because for a long time it would not work with Plasma 6. Upstream came up with their own solutions instead of using this version. This version contains more fixes for crashes (the plugin used to crash Dolphin when a menu was opened for a file that was being uploaded - but that was fixed in Qt 6). This version has better install and uninstall routines and bundles the necessary icons. It is probably technically superior, has more thorough README, but functionally it does not make much difference which one you use.
+
 Insync context menus and overlay icons use the KDE6 API and will not work in KDE5 and earlier.
 
 ### Context menus
